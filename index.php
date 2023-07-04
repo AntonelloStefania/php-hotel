@@ -40,6 +40,9 @@ if(isset($_GET['parking'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;700;800;900&display=swap" rel="stylesheet">
     <title>Hotels</title>
 </head>
 <body>
@@ -48,44 +51,38 @@ if(isset($_GET['parking'])){
     </Header>
     <Main>
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-12">
-                <div class="col-auto">
-                <form action="index.php" method="GET">
-                    <div>
-                        <div class="form-group d-flex">
-                            <label for="exampleFormControlSelect1" class="mx-3">parcheggio:</label>
-                            <select class="form-control" id="exampleFormControlSelect1" name="parking">
-                                <option value="all" selected>all</option>
-                                <option value="1">si</option>
-                                <option value="2">no</option>
-                            </select>
-                         </div>
-                    </div>
-                    <div>
-                        <div class="form-group d-flex">
-                           <label for="exampleFormControlSelect1" class="mx-3">rating:</label>
-                           <select class="form-control" id="exampleFormControlSelect1" name="rating">
-                                <option value="all" selected>all</option>
-                                <option value="1">1 stella</option>
-                                <option value="2">2 stelle</option>
-                                <option value="3">3 stelle</option>
-                                <option value="4">4 stelle</option>
-                                <option value="5">5 stelle</option>
-                           </select>
-                        </div>
-                        <div class="form-group">
-                            <button type="submit">search</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
+            <div class="row ">
+                <div class="col-12 form-container mb-5">
+                        <form action="index.php" method="GET" class="d-flex justify-content-around  h-100 align-items-center p-1">
+                            <div class="d-flex col-auto align-items-center">
+                                <label  class="mx-3 d-none d-md-inline">parcheggio:</label>
+                                <select class="form-control p-1"  name="parking">
+                                    <option value="all" selected> no filter</option>
+                                    <option value="1">si</option>
+                                    <option value="2">no</option>
+                                </select>
+                            </div>
+                            <div class=" d-flex col-auto align-items-center">
+                                <label  class="mx-3 d-none d-md-inline">rating:</label>
+                                <select class="form-control p-1"  name="rating">
+                                        <option value="all" selected>no filter</option>
+                                        <option value="1">1 stella</option>
+                                        <option value="2">2 stelle</option>
+                                        <option value="3">3 stelle</option>
+                                        <option value="4">4 stelle</option>
+                                        <option value="5">5 stelle</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-outline-dark text-white fw-bolder bg-button">search</button>
+                            </div>
+                        </form>
                 </div>
             </div>
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-12">
+                <div class="col-12 card table-container">
                     <table class="table">
                         <thead class="thead-dark">
                             <tr>
@@ -102,10 +99,10 @@ if(isset($_GET['parking'])){
                                 <th scope="row">
                                     <?php echo $hotel['name']?>
                                 </th>
-                                <td>
+                                <td class="description">
                                     <a href="#"><?php echo $hotel['description'].'...'?></a>
                                 </td>
-                                <td>
+                                <td class="ps-5">
                                     <?php echo ($hotel['parking'] == true) ? 'si' : 'no' ?>
                                 </td>
                                 <td>
@@ -115,8 +112,9 @@ if(isset($_GET['parking'])){
                                     } 
                                     ?>
                                 </td>
-                                <td>
+                                <td class="ps-4  justify-content-between">
                                     <?php echo $hotel['distance_to_center'].'km'?>
+                                    <a href="#" class="d-none d-md-inline"><i class="fa fa-map-location-dot ps-3" style="color: #05070b;"></i></a>
                                 </td>
                             </tr>
                             <?php }?>

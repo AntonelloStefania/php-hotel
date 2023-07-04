@@ -4,12 +4,42 @@
     box-sizing: border-box;
 }
 
+body {
+    min-width: 480px;
+}
+
 .header {
     height: 80px;
     background-color: orange;
     color: white;
-    font-weight: bolder;
     border-bottom: 2px solid rgb(85, 55, 1);
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
     margin-bottom: 5rem;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+h1 {
+    font-weight: 900;
+}
+
+.form-container {
+    background-color: rgba(218, 210, 210, 0.486);
+    border: 1px solid black;
+}
+
+.table-container {
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.459);
+}
+
+.bg-button {
+    background-color: rgb(83, 81, 81);
+    box-shadow: 0 0 5px black;
+}
+
+label {
+    font-weight: bold;
+}
+
+.description {
+    font-size: 14px
 }
