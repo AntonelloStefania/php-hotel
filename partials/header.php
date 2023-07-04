@@ -1,5 +1,5 @@
 <?php
-
+   
 ?>
 
 <!DOCTYPE html>
@@ -12,9 +12,9 @@
 </head>
 <body>
     <div class="container-fluid">
-        <div class="row align-items-center header">
+        <div class="row align-items-center header justify-content-around">
             <div class="col-auto">
-                <h1>BOOLKINGS.com</h1>
+                <h1>BOOLKING.com</h1>
             </div>
            
         </div>
